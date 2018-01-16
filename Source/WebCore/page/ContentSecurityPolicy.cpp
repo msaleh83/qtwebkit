@@ -351,7 +351,7 @@ CSPSourceList::CSPSourceList(ContentSecurityPolicy* policy, const String& direct
     , m_directiveName(directiveName)
     , m_allowStar(false)
     , m_allowInline(false)
-    , m_allowEval(false)
+    , m_allowEval(true)      // Fix a bug where http response header = content-security-policy: default-src 'none' (ex: www.github.com)
 {
 }
 
